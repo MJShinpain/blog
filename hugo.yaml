@@ -128,11 +128,11 @@ menu:
   main:
     - identifier: pages
       name: 세종문화회관
-      url: /pages/
+      url: pages/
       weight: 2
     - identifier: post
       name: 예술의 전당
-      url: /sac/
+      url: sac/
       weight: 1
     - name: 검색
       url: search/
