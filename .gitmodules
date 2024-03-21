@@ -1,7 +1,3 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/mjshinpain/classic_schedule.git
-	branch = main
 [submodule "themes/papermod"]
 	path = themes/papermod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
