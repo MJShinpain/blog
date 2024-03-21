@@ -1,4 +1,4 @@
-baseURL: 'https://mjshinpain.github.io/classic_schedule/'
+baseURL: 'https://mjshinpain.github.io/'
 languageCode: ko-KR
 title: 클래식 공연 일정
 theme: ["PaperMod"]
