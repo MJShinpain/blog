@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/mjshinpain/classic_schedule.git
+	branch = main
