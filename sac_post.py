@@ -12,6 +12,12 @@ output_directory = os.path.join(base_directory, "content", "sac")
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
 
+# Delete all existing markdown files in the output directory
+for file_name in os.listdir(output_directory):
+    if file_name.endswith(".md"):
+        file_path = os.path.join(output_directory, file_name)
+        os.remove(file_path)
+
 # Open the CSV file and iterate over each row
 with open(csv_file, "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
