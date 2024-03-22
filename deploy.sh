@@ -19,7 +19,7 @@ git commit -m "$msg"
 
 # Push source and build repos.
 ## master 대신 각자 연결한 branch 명으로 수정하면 된다.
-git push origin main
+git push origin update
 
 # Come Back up to the Project Root
 cd ..
