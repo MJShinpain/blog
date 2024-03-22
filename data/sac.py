@@ -83,12 +83,8 @@ for performance in concert_hall_performances:
                     ctl_sub = soup.select(f".cwa-tab-list .ctl-sub:nth-of-type({index + 1})")
 
                     if ctl_sub:
-                        # Extract all the displayed text from the corresponding "ctl-sub" div
-                        additional_info = ctl_sub[0].get_text(strip=True, separator="\n")
-
-                        # Replace newline characters with <br> tags
-                        #additional_info = additional_info.replace("\n", "<br>")
-
+                        # Extract all the information from the corresponding "ctl-sub" div
+                        additional_info = str(ctl_sub[0])
                         performance["additional_info"] = additional_info
                         break
             else:
@@ -98,12 +94,28 @@ for performance in concert_hall_performances:
     else:
         performance["additional_info"] = "cwa-tab not found"
 
+    # Find the dl element with class "area show-view-top clearfix"
+    dl_element = soup.find("dl", class_="area show-view-top clearfix")
+
+    if dl_element:
+        # Find the img element within the dl element
+        img_element = dl_element.find("img")
+
+        if img_element:
+            # Extract the image link from the src attribute
+            thumbnail_link = img_element["src"]
+            performance["thumbnail"] = thumbnail_link
+        else:
+            performance["thumbnail"] = "No image found"
+    else:
+        performance["thumbnail"] = "dl element not found"
+
 # 날짜순으로 정렬하기 위해 'date' 필드를 기준으로 concert_hall_performances 리스트를 정렬합니다.
 concert_hall_performances.sort(key=lambda x: datetime.strptime(x['date'], '%Y-%m-%d'), reverse=False)
 
 # CSV 파일로 저장
 with open("sac.csv", "w", encoding="utf-8", newline="") as file:
-    writer = csv.DictWriter(file, fieldnames=["name", "date", "link", "price", "ticket_open_date", "additional_info"], quoting=csv.QUOTE_ALL)
+    writer = csv.DictWriter(file, fieldnames=["name", "date", "link", "price", "ticket_open_date", "additional_info", "thumbnail"], quoting=csv.QUOTE_ALL)
     writer.writeheader()
     writer.writerows(concert_hall_performances)
 

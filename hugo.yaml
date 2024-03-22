@@ -69,7 +69,8 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: "클래식 공연 일정"
-    subtitle: "클래식 공연 일정을 모아두었습니다. 제가 보려고."
+    subtitle: "클래식 공연 일정을 모아두었습니다. 제가 보려고. {{< line_break >}}
+    아래 장소를 누르면 장소별 일정을 확인할 수 있습니다.{{< line_break >}}"
     imageUrl: "images/logo.jpg"
     imageWidth: 120
     imageHeight: 120

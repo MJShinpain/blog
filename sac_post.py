@@ -1,6 +1,7 @@
 import csv
 import os
 import re
+import html2text
 
 # Set the base directory of the project
 base_directory = os.path.dirname(os.path.abspath(__file__))
@@ -26,14 +27,18 @@ with open(csv_file, "r", encoding="utf-8") as file:
         name = row["name"]
         date = row["date"]
         price = row["price"]
-        additional_info = row["additional_info"]
+        additional_info_html = row["additional_info"]
         link = row["link"]
+        thumbnail = row["thumbnail"]
 
         # Remove invalid characters from the name
         name = re.sub(r'[<>:"/\\|?*]', '', name)
 
+        # Convert HTML to Markdown
+        additional_info_markdown = html2text.html2text(additional_info_html)
+
         # Replace newline characters with <br> tags or double spaces for markdown
-        additional_info = additional_info.replace('\n', '  \n')
+        additional_info_markdown = additional_info_markdown.replace('\n', '  \n')
 
         # Generate the markdown file name
         file_name = f"{date}-{name}.md"
@@ -54,10 +59,10 @@ title: "({date}) {name}"
 {price}
 
 # 공연정보
-{additional_info}
+{additional_info_markdown}
 
 # 링크
-[자세히 보기]({link}, "{link}")
+[자세히 보기]({link} "{link}")
 """
 
         # Write the markdown content to the file
