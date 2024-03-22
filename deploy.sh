@@ -2,6 +2,9 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+# Remove previous build files and cache
+rm -rf public resources
+
 # Build the project.
 hugo -t papermod
 
