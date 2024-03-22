@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pages on 클래식 공연 일정</title>
+    <link>https://mjshinpain.github.io/classic_schedule/pages/</link>
+    <description>Recent content in Pages on 클래식 공연 일정</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <atom:link href="https://mjshinpain.github.io/classic_schedule/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://mjshinpain.github.io/classic_schedule/pages/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mjshinpain.github.io/classic_schedule/pages/test/</guid>
+      <description>testse</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,135 @@
+baseURL = 'https://github.com/MJShinpain/classic_schedule.git'
+languageCode = "ko-KR"
+title = "클래식 공연 일정"
+theme = [ "PaperMod" ]
+sectionPagesMenu = "main"
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+dataDir = "data"
+googleAnalytics = "UA-123-45"
+
+[outputs]
+home = [ "HTML", "JSON" ]
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+title = "클래식 공연 일정"
+description = "클래식 공연 일정을 정리해서 보여드립니다."
+keywords = [ "Blog", "Portfolio", "클래식 공연" ]
+author = "Me"
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = true
+ShowReadingTime = false
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = false
+ShowWordCount = false
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = true
+showtoc = false
+tocopen = false
+
+  [params.assets]
+  favicon = "<link / abs url>"
+  favicon16x16 = "<link / abs url>"
+  favicon32x32 = "<link / abs url>"
+  apple_touch_icon = "<link / abs url>"
+  safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+  text = "클래식 공연 일정"
+  icon = "/images/music.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = true
+  title = "클래식 공연 일정"
+  subtitle = "클래식 공연 일정을 모아두었습니다. 제가 보려고."
+  imageUrl = "images/logo.jpg"
+  imageWidth = 120
+  imageHeight = 120
+  imageTitle = "my image"
+
+    [[params.profileMode.buttons]]
+    name = "예술의 전당"
+    url = "sac"
+
+    [[params.profileMode.buttons]]
+    name = "세종문화회관"
+    url = "pages"
+
+  [params.homeInfoParams]
+  Title = "클래식 공연 일정 👋"
+  Content = "클래식 공연 일정을 모아두었습니다."
+
+  [[params.socialIcons]]
+  name = "x"
+  url = "https://x.com/"
+
+  [[params.socialIcons]]
+  name = "stackoverflow"
+  url = "https://stackoverflow.com"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.yandex]
+SiteVerificationTag = "XYZabc"
+
+  [params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = false
+
+  [params.editPost]
+  URL = ""
+  Text = ""
+  appendFilePath = true
+
+  [params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1_000
+  threshold = 0.4
+  minMatchCharLength = 0
+  limit = 10
+  keys = [ "title", "permalink", "summary", "content" ]
+
+[[menu.main]]
+identifier = "pages"
+name = "세종문화회관"
+url = "/pages/"
+weight = 2
+
+[[menu.main]]
+identifier = "예술의 전당"
+name = "예술의 전당"
+url = "/sac/"
+weight = 1
+
+[[menu.main]]
+name = "검색"
+url = "search/"
+weight = 3
