@@ -45,6 +45,7 @@ for i in range(12):
                     date = datetime.strptime(performance["BEGIN_DATE"], "%Y.%m.%d")
                     if date.date() >= now.date():
                         name = performance["PROGRAM_SUBJECT"]
+                        time = performance["PROGRAM_PLAYTIME"]
                         sn = performance["SN"]
                         price = performance.get("PRICE_INFO", "가격 정보 없음")  # 가격 정보가 없는 경우 기본값 설정
                         ticket_open_date = performance.get("TICKET_OPEN_DATE", "예매 일정 없음")
@@ -53,6 +54,7 @@ for i in range(12):
                         concert_hall_performances.append({
                             "name": name,
                             "date": date.strftime("%Y-%m-%d"),
+                            "time": time,
                             "link": link,
                             "price": price,
                             "ticket_open_date": ticket_open_date
@@ -115,7 +117,7 @@ concert_hall_performances.sort(key=lambda x: datetime.strptime(x['date'], '%Y-%m
 
 # CSV 파일로 저장
 with open("sac.csv", "w", encoding="utf-8", newline="") as file:
-    writer = csv.DictWriter(file, fieldnames=["name", "date", "link", "price", "ticket_open_date", "additional_info", "thumbnail"], quoting=csv.QUOTE_ALL)
+    writer = csv.DictWriter(file, fieldnames=["name", "date", "time", "link", "price", "ticket_open_date", "additional_info", "thumbnail"], quoting=csv.QUOTE_ALL)
     writer.writeheader()
     writer.writerows(concert_hall_performances)
 

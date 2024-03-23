@@ -7,7 +7,7 @@ import html2text
 base_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Set the relative paths for the CSV file and output directory
-csv_file = os.path.join(base_directory, "data", "sac.csv")
+csv_file = os.path.join(base_directory, "data", "sac2.csv")
 output_directory = os.path.join(base_directory, "content", "sac")
 
 # Create the output directory if it doesn't exist
@@ -26,6 +26,7 @@ with open(csv_file, "r", encoding="utf-8") as file:
         # Extract the relevant information from the row
         name = row["name"]
         date = row["date"]
+        time = row["time"]
         price = row["price"]
         additional_info_html = row["additional_info"]
         link = row["link"]
@@ -46,14 +47,14 @@ with open(csv_file, "r", encoding="utf-8") as file:
 
         # Generate the markdown content
         markdown_content = f"""---
-title: "({date}) {name}"
+title: "({date} {time}) {name}"
 ---
 
 # 제목
 {name}
 
 # 일시
-{date}
+{date} {time}
 
 # 가격
 {price}

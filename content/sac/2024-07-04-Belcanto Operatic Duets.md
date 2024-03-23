@@ -1,12 +1,12 @@
 ---
-title: "(2024-07-04) Belcanto Operatic Duets"
+title: "(2024-07-04 19:30) Belcanto Operatic Duets"
 ---
 
 # 제목
 Belcanto Operatic Duets
 
 # 일시
-2024-07-04
+2024-07-04 19:30
 
 # 가격
 가격 정보 없음
